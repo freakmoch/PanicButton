@@ -68,6 +68,7 @@
 			var ytID = youtube[x];
 			var youtubeLink = "http://www.youtube.com/embed/" + ytID + "?autoplay=1";
 			$("#moch").attr("src", youtubeLink)
+			$("#gitAway").attr("href", youtubeLink)
 		}
 		
 		$( "#helloBtn" ).click(function( event ) {		
@@ -82,7 +83,6 @@
 		
 		$( "#exitBtn" ).click(function( event ) {		
 			$("#moch").attr("src", "about:blank")
-			
 			$("#playHan").fadeIn(300);
 			$("#playEr").hide() ;
 
@@ -122,6 +122,7 @@
 
 		<div id="playEr">
 			<p> <iframe name="moch" id="moch" height="300px" width="400px" src=""> </iframe></p>
+			<p> Because GitHub doesnt allow iframes, click <a href="" id="gitAway" target="mochidesu">here</a> for a video. </p>
 			<p> <button type="button" id="newBtn">New Video?</button> <button type="button" id="exitBtn">No More!</button> </p>
 			
 		

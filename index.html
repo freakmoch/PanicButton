@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Panic Button</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+
+	////////////////////////////////////////////////////////////
+	// array that holds yt video IDS
+	// please keep anything commented out, 
+	// video most likely just blocked or cant play in iframes
+	////////////////////////////////////////////////////////////
+	var youtube = [
+		"vFpJVdZYOJc",
+		"quLsQRSioUo",
+		"AIzFLLs9FEI",
+		"-dI6fLQzqFs",
+		///////////// "wzUABz1cV00", //?
+		"UJTAoDWj2ds",
+		"4vcNPUAthAA",
+		"0Q8lcPACNoI",
+		"XoFO3Ac93wE",
+		"chGGNf5n4Lo",
+		///////////// "Hzs0tH7m39A", //?
+		///////////// "KIfhnNDJ2Ng", // country block
+		"bJcDMY9LeVM",
+		// "uO1UauSwJ1s", //?
+		"W_qojPhbD_E",
+		"SAxpAs1Iaec",
+		"kxS0SzB0VSU",
+		"9OVv-J-LXQU",
+		///////////// "6xss42ToWt4", //?
+		"3EK9Sboe8hg",
+		"_WLCLPpw6PY",
+		"zuNlFwC3sfE",
+		"0pCS44qrJkY",
+		"TKTQVoYrhAk",
+		"PnamAuN9HX8",
+		///////////// "23Y5qItZUg4", //?
+		///////////// "Ih6IdH66_ig", //?
+		"GCuC_NL9bf0",
+		"BMB5VQL78Vk",
+		"0HYVLFhDWoU",
+		"pM0vPqwH4Vk",
+		"McKWWv2qfF8",
+		// "8ULt58MDDuQ", //?
+		"RSa4UdCtR9g",
+		"IFNBMLtP2Ok",
+		"0WPEiOhlftA",
+		"0wPbYwHhrmo",
+		"I5yqNFD2E8g",
+		"6WKMoilmRj0",
+		"qpvqpxA9C7A",
+		"Oz2ywZm7xHM",
+		"w48_Lgb36mM",
+		"SbjXmBmHAdk"
+	];
+
+	//var x = 0;
+	
+
+	$(function() {
+	
+		$("#playEr").hide();
+		
+		function videoGen() {
+			var x = Math.floor(Math.random()*youtube.length);
+			var ytID = youtube[x];
+			var youtubeLink = "http://www.youtube.com/embed/" + ytID + "?autoplay=1";
+			$("#moch").attr("src", youtubeLink)
+		}
+		
+		$( "#helloBtn" ).click(function( event ) {		
+			videoGen();
+			
+			$("#playHan").hide();
+			$("#playEr").fadeIn(300);
+
+		});
+		
+		$( "#newBtn" ).click(function( event ) { videoGen(); });
+		
+		$( "#exitBtn" ).click(function( event ) {		
+			$("#moch").attr("src", "about:blank")
+			
+			$("#playHan").fadeIn(300);
+			$("#playEr").hide() ;
+
+		});
+		
+	});
+		
+	</script>
+	
+	<style>
+		body {font-family: verdana, tahoma, sans-serif; font-size: 0.8em; font-weight: bold; }
+
+		@media (max-width: 760px){
+			img {
+				width: 80%;
+			}
+			
+			body {
+				font-size: 2em;
+
+			}
+		}
+	</style>
+</head>
+<body>
+	<center>
+		
+		<div id="playHan">
+			<p style="margin-top: 5em;">
+				<a href="#">
+					<img id="helloBtn" src="panic.png" style="max-width: 250px;" />
+				</a>
+			<p>[ you click the panic button in a panic situation]</p>
+			<p> <small><small>#volume warning on some of these ok?</small></small> </p>
+			<p> <a href="https://www.youtube.com/watch?v=wzUABz1cV00">if u just want ko</a> 
+		</div>
+
+		<div id="playEr">
+			<p> <iframe name="moch" id="moch" height="300px" width="400px" src=""> </iframe></p>
+			<p> <button type="button" id="newBtn">New Video?</button> <button type="button" id="exitBtn">No More!</button> </p>
+			
+		
+	</center>
+
+</body>
+</html>
